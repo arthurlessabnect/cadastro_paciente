@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Paciente - Arthur Lessa</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- SUPABASE CDN REMOVIDO -->
+</head>
+<body>
+    <div class="container">
+        <div class="logo">AL</div>
+        <h1>Arthur Lessa</h1>
+        <p class="subtitle">Plataforma de Nutrição</p>
+
+        <div class="form-container">
+            <h2>Cadastro de Paciente</h2>
+            <p>Preencha os dados do paciente abaixo.</p>
+
+            <form id="patient-form">
+                <div class="form-group">
+                    <label for="name">Nome Completo *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                     <!-- Removida a nota sobre login -->
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Senha Temporária *</label>
+                    <input type="password" id="password" name="password" required>
+                     <!-- Removida a nota sobre login -->
+                     <!-- Nota: A senha será enviada para o webhook. Certifique-se de que isso é seguro e necessário. -->
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telefone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="birth_date">Data de Nascimento</label>
+                    <input type="date" id="birth_date" name="birth_date">
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gênero</label>
+                    <select id="gender" name="gender">
+                        <option value="">Selecione...</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Outro">Outro</option>
+                        <option value="Prefiro não informar">Prefiro não informar</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="height_cm">Altura (cm)</label>
+                    <input type="number" id="height_cm" name="height_cm" step="0.1">
+                </div>
+
+                <div class="form-group">
+                    <label for="initial_weight_kg">Peso Inicial (kg)</label>
+                    <input type="number" id="initial_weight_kg" name="initial_weight_kg" step="0.1">
+                </div>
+
+                 <div class="form-group">
+                    <label for="body_fat_percentage">Percentual de Gordura Corporal (%)</label>
+                    <input type="number" id="body_fat_percentage" name="body_fat_percentage" step="0.1">
+                </div>
+
+                <div class="form-group">
+                    <label for="basal_metabolic_rate">Taxa Metabólica Basal (kcal)</label>
+                    <input type="number" id="basal_metabolic_rate" name="basal_metabolic_rate">
+                </div>
+
+                <div class="form-group">
+                    <label for="goal">Objetivo Principal</label>
+                    <textarea id="goal" name="goal" rows="3"></textarea>
+                </div>
+
+                <button type="submit" id="submit-button">Enviar Cadastro</button> <!-- Texto do botão alterado -->
+
+                <div id="message"></div>
+            </form>
+        </div>
+         <p class="footer-note">Os dados serão enviados para processamento.</p> <!-- Nota alterada -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
